@@ -194,7 +194,7 @@ fun magnets() {
 fun calFun(){
     val scanner = Scanner(System.`in`)
     val n = scanner.nextInt()
-    var sum = 0
+    var sum = 0L
 
     for (i in 1 until  n+1){
         if (i % 2 == 0){
