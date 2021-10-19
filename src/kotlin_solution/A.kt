@@ -34,7 +34,7 @@ fun sumOfDigits() {
 
         while (n > 0) {
             val r = n % 10
-            sum+= r
+            sum += r
             n /= 10
         }
         println(sum)
@@ -42,17 +42,17 @@ fun sumOfDigits() {
     }
 }
 
-fun firstAndLast(){
+fun firstAndLast() {
     val t = Integer.valueOf(readLine())
     var sum = 0
     var reversed = 0
 
-    for (i in 0 until t){
+    for (i in 0 until t) {
         var n = Integer.valueOf(readLine())
 
         val last = n % 10
 
-        while (n > 0){
+        while (n > 0) {
             val digit = n % 10
             reversed = reversed * 10 + digit
             n /= 10
@@ -67,16 +67,16 @@ fun firstAndLast(){
     }
 }
 
-fun reverse(){
+fun reverse() {
     val t = Integer.valueOf(readLine())
     var reversed = 0
 
-    for (i in 0 until t){
+    for (i in 0 until t) {
         var n = Integer.valueOf(readLine())
 
 
 
-        while (n > 0){
+        while (n > 0) {
             val digit = n % 10
             reversed = reversed * 10 + digit
             n /= 10
@@ -87,112 +87,125 @@ fun reverse(){
     }
 }
 
-fun tram(){
+fun tram() {
     var max = 0
     var flag = 0
     val scanner = Scanner(System.`in`)
     val n = scanner.nextInt()
 
-    for (i in 0 until n){
+    for (i in 0 until n) {
         val a = scanner.nextInt()
         val b = scanner.nextInt()
 
         flag += b
         flag -= a
 
-        if (max < flag){
+        if (max < flag) {
             max = flag
         }
     }
     println(max)
 }
 
-fun nearlyLucky(){
+fun nearlyLucky() {
     val scanner = Scanner(System.`in`)
     val s = scanner.next()
     var count = 0
 
-    for (i in s.indices){
-        if (s[i] == '4' || s[i] == '7'){
+    for (i in s.indices) {
+        if (s[i] == '4' || s[i] == '7') {
             count++
         }
     }
-    if (count == 4 || count == 7){
+    if (count == 4 || count == 7) {
         println("YES")
-    }else {
+    } else {
         println("NO")
     }
 }
 
-fun antonDanik(){
+fun antonDanik() {
     val scanner = Scanner(System.`in`)
     val n = scanner.nextInt()
     val s = scanner.next()
     var countA = 0
     var countD = 0
 
-    for (i in s.indices){
-        if (s[i] == 'A'){
+    for (i in s.indices) {
+        if (s[i] == 'A') {
             countA++
-        }
-        else{
+        } else {
             countD++
         }
     }
-    if (countA > countD){
+    if (countA > countD) {
         println("Anton")
-    }
-    else if (countA < countD){
+    } else if (countA < countD) {
         println("Danik")
-    }
-    else{
+    } else {
         println("Friendship")
     }
 
 }
 
-fun capsLock(){
+fun capsLock() {
     val scanner = Scanner(System.`in`)
     val s = scanner.next()
     val s1 = s[0].uppercase()
     print(s1)
-    for (i in 1 until s.length){
+    for (i in 1 until s.length) {
         val s2 = s[i].lowercase()
         print(s2)
     }
 }
 
-fun fence(){
+fun fence() {
     val scanner = Scanner(System.`in`)
     val n = scanner.nextInt()
     val h = scanner.nextInt()
     var flag = 0
 
-    for (i in 0 until n){
+    for (i in 0 until n) {
         val a = scanner.nextInt()
 
-        flag += if (a <= h){
+        flag += if (a <= h) {
             1
-        } else{
+        } else {
             2
         }
     }
     println(flag)
 }
 
-fun magnets(){
+fun magnets() {
     val scanner = Scanner(System.`in`)
     val n = scanner.nextInt()
     var count = 0
+    val arr = Array(n) { scanner.next() }
 
-    for (i in 0 until n){
-        val a = scanner.next()
-        
+    for (i in 0 until arr.size - 1) {
+        if (arr[i] != arr[i + 1]) {
+            count++
+        }
     }
+    println(count + 1)
 }
 
+fun calFun(){
+    val scanner = Scanner(System.`in`)
+    val n = scanner.nextInt()
+    var sum = 0
 
-
+    for (i in 1 until  n+1){
+        if (i % 2 == 0){
+            sum += i
+        }
+        else{
+            sum -= i
+        }
+    }
+    println(sum)
+}
 
 
 fun main() {
@@ -208,5 +221,7 @@ fun main() {
 //    antonDanik()
 //    capsLock()
 //    fence()
-    magnets()
+//    magnets()
+    calFun()
+
 }
