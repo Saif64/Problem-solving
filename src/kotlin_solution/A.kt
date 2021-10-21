@@ -191,37 +191,45 @@ fun magnets() {
     println(count + 1)
 }
 
-fun calFun(){
+fun calFun() {
     val scanner = Scanner(System.`in`)
-    val n = scanner.nextInt()
+    val n = scanner.nextLong()
     var sum = 0L
 
-    for (i in 1 until  n+1){
-        if (i % 2 == 0){
-            sum += i
-        }
-        else{
-            sum -= i
-        }
+    if (n % 2 == 0L) {
+        sum = n / 2
+    } else {
+        sum = -((n + 1) / 2)
     }
     println(sum)
 }
 
+fun drink() {
+    val scanner = Scanner(System.`in`)
+    var sum = 0F
+    val n = scanner.nextInt()
+
+    for (i in 0 until n) {
+        val a = scanner.nextInt()
+        sum += a
+    }
+    println(sum/n)
+}
+
 
 fun main() {
-//    val n: Int? = readLine()?.toInt()
 //    numberMirror(n)
-
 //    factorial()
 //    sumOfDigits()
 //    firstAndLast()
 //    reverse()
 //    tram()
-//nearlyLucky()
+//    nearlyLucky()
 //    antonDanik()
 //    capsLock()
 //    fence()
 //    magnets()
-    calFun()
+//    calFun()
+    drink()
 
 }
