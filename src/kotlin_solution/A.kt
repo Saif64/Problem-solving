@@ -167,7 +167,6 @@ fun fence() {
 
     for (i in 0 until n) {
         val a = scanner.nextInt()
-
         flag += if (a <= h) {
             1
         } else {
@@ -213,9 +212,51 @@ fun drink() {
         val a = scanner.nextInt()
         sum += a
     }
-    println(sum/n)
+    println(sum / n)
 }
 
+fun reverseArray(a: Array<Int>): Array<Int> {
+    return a.reversedArray()
+}
+
+fun wannaBeTheGuy() {
+    val scanner = Scanner(System.`in`)
+    val n = scanner.nextInt()
+    val p = Array(n) { scanner.nextInt() }
+    val q = Array(n - 1) { scanner.nextInt() }
+    var count = 0
+
+    for (i in p.indices) {
+        if (p[i] == n) {
+            count++
+        }
+    }
+    for (i in q.indices) {
+        if (q[i] == n) {
+            count++
+        }
+    }
+
+    if (count > 0) {
+        println("I become the guy.")
+    } else
+        println("Oh, my keyboard!")
+}
+
+fun ultraFastMathematician() {
+    val scanner = Scanner(System.`in`)
+    val num1 = scanner.next()
+    val num2 = scanner.next()
+
+    for (i in num1.indices) {
+        if (num1[i] == num2[i]) {
+            print("0")
+        }
+        else{
+            print("1")
+        }
+    }
+}
 
 fun main() {
 //    numberMirror(n)
@@ -230,6 +271,7 @@ fun main() {
 //    fence()
 //    magnets()
 //    calFun()
-    drink()
-
+//    drink()
+//    wannaBeTheGuy()
+    ultraFastMathematician()
 }
